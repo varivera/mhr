@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.comment="Initial context, no meant to be the final one (just as a reference)" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1582871928057" org.eventb.texttools.text_representation="context all_ctx&#10;// Initial context, no meant to be the final one (just as a reference)&#10;sets&#10;&#9;PERSON // set of all people of the system&#10;&#9;RESOURCE // set of all resources of the system. e.g. a blood test&#10;&#9;SERVICE_PROVIDER // set of all health service providers&#10;&#10;end&#10;" version="3">
+<org.eventb.core.carrierSet name="_8GAysFn0EeqFYbuk-dr-YA" org.eventb.core.comment="set of all people of the system" org.eventb.core.generated="false" org.eventb.core.identifier="PERSON"/>
+<org.eventb.core.carrierSet name="_8GAysVn0EeqFYbuk-dr-YA" org.eventb.core.comment="set of all resources of the system. e.g. a blood test" org.eventb.core.generated="false" org.eventb.core.identifier="RESOURCE"/>
+<org.eventb.core.carrierSet name="_8GAysln0EeqFYbuk-dr-YA" org.eventb.core.comment="set of all health service providers" org.eventb.core.generated="false" org.eventb.core.identifier="SERVICE_PROVIDER"/>
+</org.eventb.core.contextFile>

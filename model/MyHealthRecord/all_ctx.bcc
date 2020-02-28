@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+<org.eventb.core.scCarrierSet name="PERSON" org.eventb.core.source="/MyHealthRecord/all_ctx.buc|org.eventb.core.contextFile#all_ctx|org.eventb.core.carrierSet#_8GAysFn0EeqFYbuk-dr-YA" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.scCarrierSet name="RESOURCE" org.eventb.core.source="/MyHealthRecord/all_ctx.buc|org.eventb.core.contextFile#all_ctx|org.eventb.core.carrierSet#_8GAysVn0EeqFYbuk-dr-YA" org.eventb.core.type="ℙ(RESOURCE)"/>
+<org.eventb.core.scCarrierSet name="SERVICE_PROVIDER" org.eventb.core.source="/MyHealthRecord/all_ctx.buc|org.eventb.core.contextFile#all_ctx|org.eventb.core.carrierSet#_8GAysln0EeqFYbuk-dr-YA" org.eventb.core.type="ℙ(SERVICE_PROVIDER)"/>
+</org.eventb.core.scContextFile>
