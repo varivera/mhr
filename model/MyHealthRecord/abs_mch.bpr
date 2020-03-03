@@ -128,41 +128,1846 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="restrict_access/grd4/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE">
+<org.eventb.core.prProof name="restrict_access/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5"/>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p6"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p6"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p6,p9,p4,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
 </org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p5"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p6,p9,p4,p10,p7,p1,p2,p8,p3,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="restrict_access/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p5,p1,p10,p6,p11,p12,p3,p7,p2,p8,p13,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∈access_sp_record"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record ∖ {sp ↦ my_health_records∼(c)}∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="restrict_access/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p5,p1,p10,p6,p11,p12,p3,p7,p2,p8,p13,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∈access_sp_record"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record ∖ {sp ↦ my_health_records∼(c)});my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="restrict_access/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps=""/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="consumers⊆PEOPLE">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤∧⊤"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="grant_access/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p4,p6,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p4,p6,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD">
 <org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="grant_access/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p1,p10,p6,p11,p12,p3,p7,p2,p13,p14,p15">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∪{sp ↦ my_health_records∼(c)}∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬sp ↦ my_health_records∼(c)∈access_sp_record"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∉access_sp_record"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="grant_access/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p1,p10,p6,p11,p12,p3,p7,p2,p13,p14,p15">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬sp ↦ my_health_records∼(c)∈access_sp_record"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∉access_sp_record"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record∪{sp ↦ my_health_records∼(c)});my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="grant_access/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤∧⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∉access_sp_record">
+<org.eventb.core.prIdent name="SERVICE_PROVIDERS" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈ran(my_health_records)"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬sp ↦ my_health_records∼(c)∈access_sp_record">
+<org.eventb.core.prIdent name="SERVICE_PROVIDERS" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p7,p5,p1,p2,p8,p3,p4,p10,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_records∪{mhr ↦ c}∈health_record_DB∪{mhr} ⤖ consumers∪{c}"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p7,p5,p1,p2,p8,p3,p4,p10,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB∪{mhr}"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p7,p5,p1,p2,p8,p3,p4,p10,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers∈consumers∪{c} ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p7,p5,p1,p2,p8,p3,p4,p10,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(access_sp_record;(my_health_records∪{mhr ↦ c}))∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS">
 <org.eventb.core.prIdent name="SERVICE_PROVIDERS" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
 <org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_records ∖ {my_health_records∼(c) ↦ c}∈health_record_DB ∖ {my_health_records∼(c)} ⤖ consumers ∖ {c}"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="{c} ⩤ my_health_service_providers∈consumers ∖ {c} ↔ service_providers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p11,p9,p6,p1,p2,p10,p3,p4,p5,p7,p12">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record ⩥ {my_health_records∼(c)}∈service_providers ↔ health_record_DB ∖ {my_health_records∼(c)}"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p10,p8,p1,p2,p9,p3,p6,p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p5,p10,p8,p1,p2,p9,p3,p6,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record ⩥ {my_health_records∼(c)});(my_health_records ∖ {my_health_records∼(c) ↦ c}))∼⊆{c} ⩤ my_health_service_providers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_consumer/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="HEALTH_SERVICE_PROVIDERS,MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p9,p7,p6,p1,p2,p8,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(HEALTH_SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_service_provider/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers∪{sp}"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="sp∈SERVICE_PROVIDERS ∖ service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_service_provider/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="sp∈SERVICE_PROVIDERS ∖ service_providers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∈service_providers∪{sp} ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_service_provider/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p9,p5,p1,p2,p6,p3,p4,p8,p10">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬sp∈ran(my_health_service_providers)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers ∖ {sp}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∉ran(my_health_service_providers)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="delete_service_provider/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p9,p5,p1,p2,p6,p4"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p8,p10,p9,p5,p1,p2,p6,p4">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬sp∈ran(my_health_service_providers)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sp∉ran(my_health_service_providers)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∈service_providers ∖ {sp} ↔ health_record_DB"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="remove_consumer_from_sp/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers ∖ {c ↦ sp}∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="remove_consumer_from_sp/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p10,p8,p1,p2,p9,p3,p6,p7"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p5,p10,p8,p1,p2,p9,p3,p6,p7">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record ⩥ {my_health_records∼(c)});my_health_records)∼⊆my_health_service_providers ∖ {c ↦ sp}"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer_to_sp/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p4,p5,p9,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers∪{c ↦ sp}∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c ↦ sp∉my_health_service_providers"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer_to_sp/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p12,p9,p1,p2,p10,p3,p4,p5,p11,p7,p13,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record∪{sp ↦ my_health_records∼(c)});my_health_records)∼⊆my_health_service_providers∪{c ↦ sp}"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c ↦ sp∉my_health_service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="remove_consumer_from_sp/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p10,p8,p1,p2,p9,p3,p4,p5,p6,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record ⩥ {my_health_records∼(c)}∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="remove_consumer_from_sp/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p2,p3,p5,p6,p7,p8"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p5,p4">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer_to_sp/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p12,p9,p1,p2,p10,p3,p4,p5,p11,p7,p13,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∪{sp ↦ my_health_records∼(c)}∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c ↦ sp∉my_health_service_providers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="add_consumer_to_sp/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p4,p5,p9,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p10,p7,p1,p2,p8,p3,p4,p5,p9,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sp∈service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬c ↦ sp∈my_health_service_providers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="c ↦ sp∉my_health_service_providers"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_in/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_records∪{mhr ↦ c}∈health_record_DB∪{mhr} ⤖ consumers∪{c}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_in/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_service_providers∈consumers∪{c} ↔ service_providers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_in/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB∪{mhr}"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_in/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p9,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(access_sp_record;(my_health_records∪{mhr ↦ c}))∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈PEOPLE ∖ consumers"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS">
+<org.eventb.core.prIdent name="SERVICE_PROVIDERS" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="my_health_records ∖ {my_health_records∼(c) ↦ c}∈health_record_DB ∖ {my_health_records∼(c)} ⤖ consumers ∖ {c}"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="{c} ⩤ my_health_service_providers∈consumers ∖ {c} ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p10,p8,p1,p2,p9,p3,p4,p5,p6,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="access_sp_record ⩥ {my_health_records∼(c)}∈service_providers ↔ health_record_DB ∖ {my_health_records∼(c)}"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS" org.eventb.core.psManual="true">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p10,p8,p1,p2,p9,p3,p6,p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p5,p10,p8,p1,p2,p9,p3,p6,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="((access_sp_record ⩥ {my_health_records∼(c)});(my_health_records ∖ {my_health_records∼(c) ↦ c}))∼⊆{c} ⩤ my_health_service_providers"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="c∈dom(my_health_records∼)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="opt_out/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="MY_HEALTH_RECORD,PEOPLE,SERVICE_PROVIDERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p8,p6,p1,p2,p7,p3,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prIdent name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prIdent name="my_health_records" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
+<org.eventb.core.prIdent name="my_health_service_providers" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
+<org.eventb.core.prIdent name="service_providers" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="c∈consumers"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="my_health_service_providers∈consumers ↔ service_providers"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="consumers⊆PEOPLE"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="my_health_records∈health_record_DB ⤖ consumers"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="health_record_DB⊆MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="c∈ran(my_health_records)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="c∈ran(my_health_records)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="service_providers⊆SERVICE_PROVIDERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>
