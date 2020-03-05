@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poFile org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="MY_HEALTH_RECORD" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
 <org.eventb.core.poIdentifier name="SERVICE_PROVIDERS" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
@@ -10,7 +10,7 @@
 <org.eventb.core.poIdentifier name="RESOURCES" org.eventb.core.type="ℙ(RESOURCES)"/>
 <org.eventb.core.poPredicate name="SERVICE_PROVIDERW" org.eventb.core.predicate="finite(RESOURCES)" org.eventb.core.source="/MyHealthRecord/ref1_ctx.buc|org.eventb.core.contextFile#ref1_ctx|org.eventb.core.axiom#_7Fu9AV0LEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="consumers" org.eventb.core.type="ℙ(PEOPLE)"/>
 <org.eventb.core.poIdentifier name="health_record_DB" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
@@ -28,7 +28,7 @@
 <org.eventb.core.poPredicate name="my_health_service_providery" org.eventb.core.predicate="access_sp_record∈service_providers ↔ health_record_DB" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.invariant#_pPjFMVx0EeqNLv8xNYgXlw"/>
 <org.eventb.core.poPredicate name="my_health_service_providerz" org.eventb.core.predicate="(access_sp_record;my_health_records)∼⊆my_health_service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.invariant#_QF0LMFx1EeqNLv8xNYgXlw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="24">
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providert"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(RESOURCES×MY_HEALTH_RECORD))∈(∅ ⦂ ℙ(RESOURCES)) → (∅ ⦂ ℙ(MY_HEALTH_RECORD))" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#'"/>
@@ -37,7 +37,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="24">
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providert"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(RESOURCES×PEOPLE))∈(∅ ⦂ ℙ(RESOURCES)) → (∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#'"/>
@@ -46,7 +46,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="24">
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providert"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(RESOURCES×PEOPLE))=(∅ ⦂ ℙ(RESOURCES×MY_HEALTH_RECORD));(∅ ⦂ ℙ(MY_HEALTH_RECORD×PEOPLE))" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#'"/>
@@ -55,7 +55,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providert" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providert" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="my_health_service_providers'" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
 <org.eventb.core.poIdentifier name="health_record_DB'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
@@ -66,30 +66,30 @@
 <org.eventb.core.poIdentifier name="my_health_records'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
 <org.eventb.core.poIdentifier name="service_providers'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providert" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providert" org.eventb.core.poStamp="24"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provideru" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providert" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providert" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provideru" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.poIdentifier name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provideru" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provideru" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provideru" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provideru" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_b404MF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_HOM00lx2EeqNLv8xNYgXlw"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sp∈service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_b404MF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_uU4VYVx2EeqNLv8xNYgXlw"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_b404MF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_uU4VYlx2EeqNLv8xNYgXlw"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∈access_sp_record" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_b404MF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_v3LOkFx2EeqNLv8xNYgXlw"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerv" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerv" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.poIdentifier name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerv" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerv" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerv" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerv" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_qDYSYF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_lCSqE10CEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sp∈service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_qDYSYF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_lCSqFF0CEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c ↦ sp∈my_health_service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_qDYSYF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_lCTRIF0CEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="sp ↦ my_health_records∼(c)∉access_sp_record" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_qDYSYF3TEeqUmKKAftSzKQ|org.eventb.core.guard#_lCTRIV0CEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="opt_in/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_in/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="record_mhr∈records → health_record_DB∪{mhr}" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_xUlAcF0VEeq-wtyRsAV-BQ"/>
@@ -98,7 +98,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_in\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="opt_in/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_in/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership∈records → consumers∪{c}" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_xUlAcF0VEeq-wtyRsAV-BQ"/>
@@ -107,7 +107,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_in\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="opt_in/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_in/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership=record_mhr;(my_health_records∪{mhr ↦ c})" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_xUlAcF0VEeq-wtyRsAV-BQ"/>
@@ -116,18 +116,18 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_in\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerw" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerw" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="health_record_DB'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.poIdentifier name="consumers'" org.eventb.core.type="ℙ(PEOPLE)"/>
 <org.eventb.core.poIdentifier name="my_health_records'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
 <org.eventb.core.poIdentifier name="mhr" org.eventb.core.type="MY_HEALTH_RECORD"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerw" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerw" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerw" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerw" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈PEOPLE ∖ consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_xUlAcF0VEeq-wtyRsAV-BQ|org.eventb.core.guard#_YMPIM10DEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mhr∈MY_HEALTH_RECORD ∖ health_record_DB" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_xUlAcF0VEeq-wtyRsAV-BQ|org.eventb.core.guard#_YMPINF0DEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="opt_out/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_out/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership∼[{c}] ⩤ record_mhr∈records ∖ ownership∼[{c}] → health_record_DB ∖ {my_health_records∼(c)}" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_3F0mUF0VEeq-wtyRsAV-BQ"/>
@@ -136,7 +136,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_out\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="opt_out/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_out/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership ⩥ {c}∈records ∖ ownership∼[{c}] → consumers ∖ {c}" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_3F0mUF0VEeq-wtyRsAV-BQ"/>
@@ -145,7 +145,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_out\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="opt_out/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="30">
+<org.eventb.core.poSequent name="opt_out/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_providerx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership ⩥ {c}=ownership∼[{c}] ⩤ record_mhr;(my_health_records ∖ {my_health_records∼(c) ↦ c})" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_3F0mUF0VEeq-wtyRsAV-BQ"/>
@@ -154,7 +154,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#opt_out\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerx" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerx" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="my_health_service_providers'" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
 <org.eventb.core.poIdentifier name="health_record_DB'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
@@ -165,77 +165,118 @@
 <org.eventb.core.poIdentifier name="consumers'" org.eventb.core.type="ℙ(PEOPLE)"/>
 <org.eventb.core.poIdentifier name="my_health_records'" org.eventb.core.type="ℙ(MY_HEALTH_RECORD×PEOPLE)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerx" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerx" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerx" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerx" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_3F0mUF0VEeq-wtyRsAV-BQ|org.eventb.core.guard#_zwKFUl0FEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providery" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providery" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="service_providers'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
 <org.eventb.core.poIdentifier name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providery" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providery" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providery" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providery" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sp∈SERVICE_PROVIDERS ∖ service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_l99rUF0GEeq-wtyRsAV-BQ|org.eventb.core.guard#_l99rUl0GEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerz" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="30">
-<org.eventb.core.poIdentifier name="service_providers'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
-<org.eventb.core.poIdentifier name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerz" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerz" org.eventb.core.poStamp="30">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sp∈service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_l99rVF0GEeq-wtyRsAV-BQ|org.eventb.core.guard#_l99rVl0GEeq-wtyRsAV-BQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sp∉ran(my_health_service_providers)" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_l99rVF0GEeq-wtyRsAV-BQ|org.eventb.core.guard#_BjCw8F0HEeq-wtyRsAV-BQ"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provider{" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_providerz" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="access_sp_record'" org.eventb.core.type="ℙ(SERVICE_PROVIDERS×MY_HEALTH_RECORD)"/>
 <org.eventb.core.poIdentifier name="my_health_service_providers'" org.eventb.core.type="ℙ(PEOPLE×SERVICE_PROVIDERS)"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.poIdentifier name="sp" org.eventb.core.type="SERVICE_PROVIDERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provider{" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provider{" org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_ytcZMF0HEeq-wtyRsAV-BQ|org.eventb.core.guard#_hk0rY10HEeq-wtyRsAV-BQ"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sp∈service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_ytcZMF0HEeq-wtyRsAV-BQ|org.eventb.core.guard#_mEyIMF0KEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_providerz" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_providerz" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_ytcZMF0HEeq-wtyRsAV-BQ|org.eventb.core.guard#_l99rVl0GEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sp∈service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_ytcZMF0HEeq-wtyRsAV-BQ|org.eventb.core.guard#_BjCw8F0HEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c ↦ sp∉my_health_service_providers" org.eventb.core.source="/MyHealthRecord/abs_mch.bum|org.eventb.core.machineFile#abs_mch|org.eventb.core.event#_ytcZMF0HEeq-wtyRsAV-BQ|org.eventb.core.guard#_mEyIMV0KEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="add_record/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poSequent name="add_record/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider{"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="record_mhr∪{r ↦ my_health_records∼(c)}∈records∪{r} → health_record_DB" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#add_record\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="add_record/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poSequent name="add_record/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider{"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership∪{r ↦ c}∈records∪{r} → consumers" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#add_record\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="add_record/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poSequent name="add_record/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider{"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership∪{r ↦ c}=(record_mhr∪{r ↦ my_health_records∼(c)});my_health_records" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#add_record\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="add_record/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="33">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poSequent name="add_record/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider{"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ|org.eventb.core.action#_aJ-JwF0PEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ|org.eventb.core.action#_aJ-JwF0PEeq-wtyRsAV-BQ"/>
-<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider{"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provider|" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="33">
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provider{" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="records'" org.eventb.core.type="ℙ(RESOURCES)"/>
 <org.eventb.core.poIdentifier name="r" org.eventb.core.type="RESOURCES"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
 <org.eventb.core.poIdentifier name="ownership'" org.eventb.core.type="ℙ(RESOURCES×PEOPLE)"/>
 <org.eventb.core.poIdentifier name="record_mhr'" org.eventb.core.type="ℙ(RESOURCES×MY_HEALTH_RECORD)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provider|" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provider\|" org.eventb.core.poStamp="33">
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provider{" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provider{" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈RESOURCES ∖ records" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ|org.eventb.core.guard#_PK8QY10PEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_PK8QYF0PEeq-wtyRsAV-BQ|org.eventb.core.guard#_PK8QZF0PEeq-wtyRsAV-BQ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poSequent name="remove_record/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="2">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTHYPmy_health_service_provider\|'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.guard#_ByLC4F6YEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.guard#_ByLC4F6YEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTHYPmy_health_service_provider\|'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="remove_record/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="record_mhr ∖ {r ↦ my_health_records∼(c)}∈records ∖ {r} → health_record_DB" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#remove_record\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="remove_record/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership ∖ {r ↦ c}∈records ∖ {r} → consumers" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#remove_record\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="remove_record/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ownership ∖ {r ↦ c}=(record_mhr ∖ {r ↦ my_health_records∼(c)});my_health_records" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEV0MEeq-wtyRsAV-BQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poSequent#remove_record\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="remove_record/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(my_health_records∼)∧my_health_records∼∈PEOPLE ⇸ MY_HEALTH_RECORD" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.action#_204O5V6XEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.action#_204O5V6XEeqDMsFs4V7FUQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTALLHYPmy_health_service_provider\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmy_health_service_provider|" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="records'" org.eventb.core.type="ℙ(RESOURCES)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="RESOURCES"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="ownership'" org.eventb.core.type="ℙ(RESOURCES×PEOPLE)"/>
+<org.eventb.core.poIdentifier name="record_mhr'" org.eventb.core.type="ℙ(RESOURCES×MY_HEALTH_RECORD)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPmy_health_service_provider|'" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTIDENTmy_health_service_provider\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈consumers" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.guard#_204O416XEeqDMsFs4V7FUQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmy_health_service_provider|" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#EVTHYPmy_health_service_provider\|'" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r ↦ my_health_records∼(c)∈record_mhr" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.event#_204O4F6XEeqDMsFs4V7FUQ|org.eventb.core.guard#_ByLC4F6YEeqDMsFs4V7FUQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/MyHealthRecord/ref1.bpo|org.eventb.core.poFile#ref1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="records⊆RESOURCES" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_QdRiUV0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="record_mhr∈records → health_record_DB" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_f-TnQl0MEeq-wtyRsAV-BQ"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ownership∈records → consumers" org.eventb.core.source="/MyHealthRecord/ref1.bum|org.eventb.core.machineFile#ref1|org.eventb.core.invariant#_yYQaEF0MEeq-wtyRsAV-BQ"/>
