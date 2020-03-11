@@ -1,0 +1,236 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{ref2\_access}
+\MACHINE{ref2\_access}{ref1}{ref1\_ctx}{\\~~~~This machine introduces (permissions) level of access from Health Service Providers and level of\\~~~~access that records can have. This machine does not consider Nominated and Authorised people. This\\~~~~will introduced in a later refinement\\~~~~Record Access Levels\\~~~~	General Access: authorised Health Service Providers can view the record;\\~~~~	Restricted Access: authorised Health Service Providers with  'Restricted Access'\\~~~~					permissions can view the record;\\~~~~	Hide Record: no one (no even the owner) can view this record. The record can be recovered; and\\~~~~	Removed Document: no access. This is a permanent record removal.\\~~~~Health Service Provider Access Levels:\\~~~~	General Access: allows authorised individuals from a Health Service Provider (individuals,\\~~~~				e.g. a doctor, is not modelled yet) to access a My Health Record and view\\~~~~				records set 'General Access'.\\~~~~			Any report uploaded by this Health Service Provider will be ser 'General Access';\\~~~~	Restricted Access: allows authorised individuals from a Health Service Provider (individuals,\\~~~~				e.g. a doctor, is not modelled yet) to access a My Health Record and view\\~~~~				records set both 'General Access' and 'Restricted Access'.\\~~~~			Any report uploaded by this Health Service Provider will be ser 'Restricted Access';\\~~~~	Revoked Access: prevents an organisation from accessing reports in the My Health Record.}
+\VARIABLES{
+	\Variable{health\_record\_DB}{models the centralised DB where all health records are held}
+	\Variable{consumers}{models the people that have health records}
+	\Variable{service\_providers}{models registered Health Service Providers.}
+	\Variable{my\_health\_records}{\\maps Health Recods to Consumers as a one to one relation\\~            one Health Record belongs to a single consumer and one consumer has\\~            only one Health Record }
+	\Variable{my\_health\_service\_providers}{\\maps Consumers to Health Service Provider. A consumer might\\~            have several (or none) health service providers and a health service provider\\~            might have several (or none) consumers }
+	\Variable{access\_sp\_record}{\\models the access permission to health records from health service providers.\\~            REFINEMENT 1 }
+	\Variable{records}{each health resource e.g. a blood test.}
+	\Variable{record\_mhr}{maps each record to a My Health Record}
+	\Variable{ownership}{maps recors to their owner}
+	\Variable{general\_access\_list\_sp}{maps Health Service Providers with 'General Access' to My Health Record}
+	\Variable{restricted\_access\_list\_sp}{maps Health Service Providers with 'Restricted Access' to My Health Record}
+	\Variable{revoked\_list\_sp}{maps Health Service Providers whose access have been revoked to My Health Record}
+	\Variable{record\_general\_list}{maps a record with 'General Access' to the My Health Record it belongs to}
+	\Variable{record\_restricted\_list}{maps a record with 'Restricted Access' to the My Health Record it belongs to}
+	\Variable{record\_hide\_list}{maps a hidden record to the My Health Record it belongs to}
+}
+\INVARIANTS{
+	\Invariant{inv1\_r2}{false}{$general\_access\_list\_sp \in{} service\_providers \rel{}  health\_record\_DB$}{}
+	\Invariant{inv2\_r2}{false}{$restricted\_access\_list\_sp \in{} service\_providers \rel{}  health\_record\_DB$}{}
+	\Invariant{inv3\_r2}{false}{$revoked\_list\_sp \in{} service\_providers \rel{}  health\_record\_DB$}{}
+	\Invariant{inv4\_r3}{false}{$general\_access\_list\_sp \binter{} restricted\_access\_list\_sp \binter{} revoked\_list\_sp = \emptyset{}$}{\\each Health Service Provider has only one access level to a My Health Record}
+	\Invariant{inv5\_r3}{false}{$general\_access\_list\_sp \bunion{} restricted\_access\_list\_sp \bunion{} revoked\_list\_sp = access\_sp\_record$}{}
+	\Invariant{inv6\_r3}{false}{$record\_general\_list \in{} records \rel{} health\_record\_DB$}{}
+	\Invariant{inv7\_r3}{false}{$record\_restricted\_list \in{} records \rel{} health\_record\_DB$}{}
+	\Invariant{inv8\_r3}{false}{$record\_hide\_list \in{} records \rel{} health\_record\_DB$}{}
+	\Invariant{inv9\_r3}{false}{$record\_general\_list \binter{} record\_restricted\_list \binter{} record\_hide\_list = \emptyset{}$}{\\each report has only one access level}
+	\Invariant{inv10\_r3}{false}{$record\_general\_list \bunion{} record\_restricted\_list \bunion{} record\_hide\_list = record\_mhr$}{\\To check: the owner of the record has all permissions}
+}
+\EVENTS{
+\INITIALISATION{true}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$health\_record\_DB \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act2}{$consumers \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act3}{$service\_providers \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act4}{$my\_health\_records \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act5}{$my\_health\_service\_providers \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act6}{$access\_sp\_record \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act1\_r1}{$records \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act2\_r1}{$record\_mhr \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act3\_r1}{$ownership \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act1\_r2}{$general\_access\_list\_sp \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act2\_r2}{$restricted\_access\_list\_sp \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act3\_r2}{$revoked\_list\_sp \bcmeq{}  \emptyset{}$}{true}{}
+		\Action{act4\_r2}{$record\_general\_list \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act5\_r2}{$record\_restricted\_list \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act6\_r2}{$record\_hide\_list \bcmeq{}  \emptyset{}$}{true}{}
+	}
+}
+\EVT{remove\_access}{true}{ordinary}{remove\_access}{}{
+	\ANY{
+		\Param{c}{false}{consumer restricing access}
+		\Param{sp}{false}{service provider whose access might be restricted}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+		\Guard{grd2}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd3}{false}{$c \mapsto{} sp \in{} my\_health\_service\_providers$}{false}{\\c belongs to sp service provider}
+		\Guard{grd4}{false}{$sp \mapsto{} my\_health\_records\converse{}(c) \in{} access\_sp\_record$}{false}{\\access has not been previously restricted}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$access\_sp\_record \bcmeq{}  access\_sp\_record\setminus{}\{sp \mapsto{} my\_health\_records\converse{}(c)\}$}{false}{}
+	}
+}
+\EVT{opt\_in}{true}{ordinary}{opt\_in}{}{
+	\ANY{
+		\Param{c}{false}{new consumer}
+		\Param{mhr}{false}{a new consumer is associated a new my health record}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} PEOPLE\setminus{}consumers$}{false}{}
+		\Guard{grd2}{false}{$mhr \in{} MY\_HEALTH\_RECORD\setminus{}health\_record\_DB$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$consumers \bcmeq{} consumers \bunion{} \{c\}$}{false}{}
+		\Action{act2}{$health\_record\_DB \bcmeq{} health\_record\_DB \bunion{} \{mhr\}$}{false}{}
+		\Action{act3}{$my\_health\_records \bcmeq{} my\_health\_records \bunion{} \{mhr\mapsto{}c\}$}{false}{}
+	}
+}
+\EVT{opt\_out}{true}{ordinary}{opt\_out}{}{
+	\ANY{
+		\Param{c}{false}{\\consumer to delete\\~ 			a consumer can, at any time, delete their account\\~ 		}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$consumers \bcmeq{} consumers \setminus{} \{c\}$}{false}{}
+		\Action{act2}{$health\_record\_DB \bcmeq{} health\_record\_DB \setminus{} \{my\_health\_records\converse{}(c)\}$}{false}{}
+		\Action{act3}{$my\_health\_records \bcmeq{} my\_health\_records \setminus{} \{my\_health\_records\converse{}(c)\mapsto{}c\}$}{false}{}
+		\Action{act4}{$my\_health\_service\_providers \bcmeq{} \{c\} \domsub{} my\_health\_service\_providers$}{false}{}
+		\Action{act5}{$access\_sp\_record \bcmeq{} access\_sp\_record \ransub{} \{my\_health\_records\converse{}(c)\}$}{false}{}
+		\Action{act1\_r1}{$records \bcmeq{} records\setminus{}(ownership\converse{}[\{c\}])$}{false}{}
+		\Action{act2\_r1}{$record\_mhr \bcmeq{} ownership\converse{}[\{c\}] \domsub{} record\_mhr$}{false}{}
+		\Action{act3\_r1}{$ownership \bcmeq{} ownership \ransub{} \{c\}$}{false}{}
+	}
+}
+\EVT{add\_service\_provider}{true}{ordinary}{add\_service\_provider}{}{
+	\ANY{
+		\Param{sp}{false}{new service provider}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$sp \in{} SERVICE\_PROVIDERS\setminus{}service\_providers$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$service\_providers \bcmeq{} service\_providers \bunion{} \{sp\}$}{false}{}
+	}
+}
+\EVT{delete\_service\_provider}{true}{ordinary}{delete\_service\_provider}{}{
+	\ANY{
+		\Param{sp}{false}{service provider to delete}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd2}{false}{$sp \notin{} ran(my\_health\_service\_providers)$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$service\_providers \bcmeq{} service\_providers \setminus{} \{sp\}$}{false}{}
+	}
+}
+\EVT{remove\_consumer\_from\_sp}{true}{ordinary}{remove\_consumer\_from\_sp}{}{
+	\ANY{
+		\Param{c}{false}{consumer}
+		\Param{sp}{false}{service provider}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c\mapsto{}sp \in{} my\_health\_service\_providers$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$my\_health\_service\_providers \bcmeq{} my\_health\_service\_providers \setminus{} \{c\mapsto{}sp\}$}{false}{}
+		\Action{act2}{$access\_sp\_record \bcmeq{} access\_sp\_record \ransub{} \{my\_health\_records\converse{}(c)\}$}{false}{\\sp does not longer have access to c's health record}
+	}
+}
+\EVT{add\_consumer\_to\_sp}{true}{ordinary}{add\_consumer\_to\_sp}{}{
+	\ANY{
+		\Param{c}{false}{consumer}
+		\Param{sp}{false}{service provider}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+		\Guard{grd2}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd3}{false}{$c\mapsto{}sp \notin{} my\_health\_service\_providers$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$my\_health\_service\_providers \bcmeq{} my\_health\_service\_providers \bunion{} \{c\mapsto{}sp\}$}{false}{}
+		\Action{act2}{$access\_sp\_record \bcmeq{}  access\_sp\_record \bunion{} \{sp\mapsto{} my\_health\_records\converse{}(c)\}$}{false}{\\by default: access to c's My Health Record}
+	}
+}
+\EVT{add\_record}{true}{ordinary}{add\_record}{}{
+	\ANY{
+		\Param{r}{false}{new record}
+		\Param{c}{false}{consumer}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$r \in{} RESOURCES\setminus{}records$}{false}{}
+		\Guard{grd2}{false}{$c \in{} consumers$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$records \bcmeq{} records \bunion{} \{r\}$}{false}{}
+		\Action{act2}{$record\_mhr \bcmeq{} record\_mhr \bunion{} \{r\mapsto{}my\_health\_records\converse{}(c)\}$}{false}{}
+		\Action{act3}{$ownership \bcmeq{} ownership \bunion{} \{r\mapsto{}c\}$}{false}{}
+	}
+}
+\EVT{grant\_general\_access\_to\_SP}{true}{ordinary}{grant\_access}{}{
+	\ANY{
+		\Param{c}{false}{consumer granting access}
+		\Param{sp}{false}{service provider whose access will be granted}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+		\Guard{grd2}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd3}{false}{$c \mapsto{} sp \in{} my\_health\_service\_providers$}{false}{\\c belongs to sp service provider}
+		\Guard{grd4}{false}{$sp \mapsto{} my\_health\_records\converse{}(c) \notin{} access\_sp\_record$}{false}{\\access is currently restricted}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$access\_sp\_record \bcmeq{}  access\_sp\_record \bunion{} \{sp \mapsto{} my\_health\_records\converse{}(c)\}$}{false}{}
+	}
+}
+\EVT{grant\_restricted\_access\_to\_SP}{true}{ordinary}{grant\_access}{}{
+	\ANY{
+		\Param{c}{false}{consumer granting access}
+		\Param{sp}{false}{service provider whose access will be granted}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+		\Guard{grd2}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd3}{false}{$c \mapsto{} sp \in{} my\_health\_service\_providers$}{false}{\\c belongs to sp service provider}
+		\Guard{grd4}{false}{$sp \mapsto{} my\_health\_records\converse{}(c) \notin{} access\_sp\_record$}{false}{\\access is currently restricted}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$access\_sp\_record \bcmeq{}  access\_sp\_record \bunion{} \{sp \mapsto{} my\_health\_records\converse{}(c)\}$}{false}{}
+	}
+}
+\EVT{revoke\_access\_to\_SP}{true}{ordinary}{grant\_access}{}{
+	\ANY{
+		\Param{c}{false}{consumer granting access}
+		\Param{sp}{false}{service provider whose access will be granted}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$c \in{} consumers$}{false}{}
+		\Guard{grd2}{false}{$sp \in{} service\_providers$}{false}{}
+		\Guard{grd3}{false}{$c \mapsto{} sp \in{} my\_health\_service\_providers$}{false}{\\c belongs to sp service provider}
+		\Guard{grd4}{false}{$sp \mapsto{} my\_health\_records\converse{}(c) \notin{} access\_sp\_record$}{false}{\\access is currently restricted}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$access\_sp\_record \bcmeq{}  access\_sp\_record \bunion{} \{sp \mapsto{} my\_health\_records\converse{}(c)\}$}{false}{}
+	}
+}
+\EVT{restrict\_record}{false}{ordinary}{}{}{
+	\ACTIONS{false}{
+		\Skip
+	}
+}
+\EVT{hide\_record}{false}{ordinary}{}{}{
+	\ACTIONS{false}{
+		\Skip
+	}
+}
+\EVT{remove\_record}{false}{ordinary}{}{}{
+	\ACTIONS{false}{
+		\Skip
+	}
+}
+\EVT{general\_access\_record}{false}{ordinary}{}{}{
+	\ACTIONS{false}{
+		\Skip
+	}
+}
+}
+\END
+\end{document}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1583877165585" org.eventb.texttools.text_representation="context ctx_ref1 extends ctx_abs&#10;sets&#10;&#9;RESOURCES&#10;&#10;axioms&#10;&#9;@ax1 finite(RESOURCES)&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="ctx_abs"/>
+<org.eventb.core.carrierSet name="_ejvvkF9CEeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.identifier="RESOURCES"/>
+<org.eventb.core.axiom name="_ejvvkV9CEeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.label="ax1" org.eventb.core.predicate="finite(RESOURCES)"/>
+</org.eventb.core.contextFile>
