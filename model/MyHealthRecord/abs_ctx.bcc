@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.axiom#_10mzIFxyEeqNLv8xNYgXlw" org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.axiom#_4ogeIFxyEeqNLv8xNYgXlw" org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm4" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.axiom#_-WxWkFx0EeqNLv8xNYgXlw" org.eventb.core.theorem="false"/>
-<org.eventb.core.scCarrierSet name="MY_HEALTH_RECORD" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.carrierSet#_wkSJAFxyEeqnL8kq8jhb4Q" org.eventb.core.type="ℙ(MY_HEALTH_RECORD)"/>
-<org.eventb.core.scCarrierSet name="PEOPLE" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.carrierSet#_wkSwEFxyEeqnL8kq8jhb4Q" org.eventb.core.type="ℙ(PEOPLE)"/>
-<org.eventb.core.scCarrierSet name="SERVICE_PROVIDERS" org.eventb.core.source="/MyHealthRecord/abs_ctx.buc|org.eventb.core.contextFile#abs_ctx|org.eventb.core.carrierSet#_-WwvgVx0EeqNLv8xNYgXlw" org.eventb.core.type="ℙ(SERVICE_PROVIDERS)"/>
-</org.eventb.core.scContextFile>
