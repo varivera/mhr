@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1583453722720" org.eventb.texttools.text_representation="context ctx_abs&#10;&#10;sets MY_HEALTH_RECORD // models all possible Health Records the system could have.&#10;     PEOPLE // models all possible people of the system (e.g. a consumer).&#10;&#10;axioms&#10;  @axm1 finite(MY_HEALTH_RECORD)&#10;  @axm2 finite(PEOPLE)&#10;end" version="3">
-<org.eventb.core.carrierSet name="_kh2NEF8_EeqDMsFs4V7FUQ" org.eventb.core.comment="models all possible Health Records the system could have." org.eventb.core.generated="false" org.eventb.core.identifier="MY_HEALTH_RECORD"/>
-<org.eventb.core.carrierSet name="_kh2NEV8_EeqDMsFs4V7FUQ" org.eventb.core.comment="models all possible people of the system (e.g. a consumer)." org.eventb.core.generated="false" org.eventb.core.identifier="PEOPLE"/>
-<org.eventb.core.axiom name="_kh2NEl8_EeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(MY_HEALTH_RECORD)"/>
-<org.eventb.core.axiom name="_kh2NE18_EeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(PEOPLE)"/>
-</org.eventb.core.contextFile>

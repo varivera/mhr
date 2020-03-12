@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1583552230535" org.eventb.texttools.text_representation="context ctx_ref2 extends ctx_ref1&#10;sets&#10;&#9;SERVICE_PROVIDERS&#10;axioms&#10;&#9;@axm1 finite(SERVICE_PROVIDERS)&#10;end&#10;" version="3">
-<org.eventb.core.extendsContext name="'" org.eventb.core.target="ctx_ref1"/>
-<org.eventb.core.carrierSet name="_7VmOoGAkEeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.identifier="SERVICE_PROVIDERS"/>
-<org.eventb.core.axiom name="_7VmOoWAkEeqDMsFs4V7FUQ" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(SERVICE_PROVIDERS)"/>
-</org.eventb.core.contextFile>
