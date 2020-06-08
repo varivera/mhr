@@ -1,0 +1,1833 @@
+
+MACHINE ref3_authorised_reps
+SETS /* deferred */
+  MY_HEALTH_RECORD;
+  PEOPLE;
+  RESOURCES;
+  SERVICE_PROVIDERS
+ABSTRACT_VARIABLES
+  authorised_rep,
+  full_access_nominated,
+  general_nominated,
+  general_nominated_access,
+  restricted_nominated,
+  restricted_nominated_access,
+  consumer_sp,
+  general_sp_access,
+  general_sp_list,
+  restricted_sp_access,
+  restricted_sp_list,
+  revoked_sp_list,
+  service_providers,
+  sp_MyHR_access,
+  MyHR,
+  consumer,
+  general_records,
+  hidden_records,
+  my_health_record_DB,
+  records,
+  records_mhr,
+  records_ownership,
+  restricted_records,
+  system_operator
+/* PROMOTED OPERATIONS
+  opt_in,
+  opt_out,
+  view_record_owner,
+  view_record_authorised_rep,
+  view_record_nominated,
+  view_record_service_provider,
+  delete_record_owner,
+  delete_record_authorised_rep,
+  upload_general_record_owner,
+  upload_general_record_authorised_rep,
+  upload_restricted_record_owner,
+  upload_restricted_record_authorised_rep,
+  upload_general_record_nominated,
+  upload_restricted_record_nominated,
+  upload_general_record_SP,
+  upload_restricted_record_SP,
+  restrict_record,
+  restrict_record_authorised_rep,
+  general_record,
+  general_record_authorised_rep,
+  hide_record,
+  hide_record_authorised_rep,
+  unhide_record,
+  unhide_record_authorised_rep,
+  add_consumer_sp,
+  add_consumer_sp_authorised_rep,
+  add_sp,
+  revoke_access_sp,
+  revoke_access_sp_authorised_rep,
+  give_restricted_access_sp,
+  give_restricted_access_sp_authorised_rep,
+  give_general_access_sp,
+  give_general_access_sp_authorised_rep,
+  add_nominated,
+  add_nominated_authorised_rep,
+  delete_general_nominated,
+  delete_general_nominated_authorised_rep,
+  grant_restrict_access_to_general_nominated,
+  grant_restrict_access_to_general_nominated_authorised_rep,
+  grant_restrict_access_to_full_access_nominated,
+  grant_restrict_access_to_full_access_nominated_authorised_rep,
+  grant_general_access_to_nominated,
+  grant_general_access_to_nominated_authorised_rep,
+  grant_full_access_to_nominated,
+  grant_full_access_to_nominated_authorised_rep,
+  add_authorised,
+  delete_authorised */
+AXIOMS
+    /* @ctx_abs:axm4 */ card(MY_HEALTH_RECORD) = 4
+  & /* @ctx_abs:axm5 */ card(PEOPLE) = 5
+  & /* @ctx_abs:axm6 */ card(RESOURCES) = 6
+  & /* @ctx_ref1:axm2 */ card(SERVICE_PROVIDERS) = 2
+INVARIANT
+    /* @ref3_authorised_reps:inv1_r3 */ authorised_rep ∈ consumer ↔ my_health_record_DB
+  & /* @ref3_authorised_reps:inv2_r3 */ MyHR ∩ authorised_rep = ∅
+  & /* @ref2_nominated_reps:inv1_r2 */ general_nominated ∈ consumer ↔ my_health_record_DB
+  & /* @ref2_nominated_reps:inv2_r2 */ restricted_nominated ∈ consumer ↔ my_health_record_DB
+  & /* @ref2_nominated_reps:inv3_r2 */ full_access_nominated ∈ consumer ↔ my_health_record_DB
+  & /* @ref2_nominated_reps:inv4_r2 */ general_nominated ∩ restricted_nominated = ∅
+  & /* @ref2_nominated_reps:inv5_r2 */ full_access_nominated ⊆ restricted_nominated
+  & /* @ref2_nominated_reps:inv7_r2 */ (general_nominated ∪ restricted_nominated) ∩ MyHR = ∅
+  & /* @ref2_nominated_reps:inv8a_r2 */ restricted_nominated_access ∈ consumer ↔ records
+  & /* @ref2_nominated_reps:inv8b_r2 */ dom(restricted_nominated_access) ⊆ dom(general_nominated 
+  ∪ restricted_nominated)
+  & /* @ref2_nominated_reps:inv8c_r2 */ ran(restricted_nominated_access) ⊆ general_records ∪ 
+  restricted_records
+  & /* @ref2_nominated_reps:inv9a_r2 */ general_nominated_access ∈ consumer ↔ records
+  & /* @ref2_nominated_reps:inv9b_r2 */ dom(general_nominated_access) ⊆ dom(general_nominated)
+  
+  & /* @ref2_nominated_reps:inv9c_r2 */ ran(general_nominated_access) ⊆ general_records
+  & /* @ref2_nominated_reps:inv10_r2 */ general_nominated_access ⊆ restricted_nominated_access
+  & /* @ref2_nominated_reps:inv11_r2 */ restricted_nominated_access = (restricted_nominated 
+  ; ((general_records ∪ restricted_records) ◁ records_mhr)⁻¹) ∪ (general_nominated ; (general_records 
+  ◁ records_mhr)⁻¹)
+  & /* @ref2_nominated_reps:inv12_r2 */ general_nominated_access = (general_nominated ; (general_records 
+  ◁ records_mhr)⁻¹)
+  & /* @ref1_service_providers:inv2_r1 */ consumer_sp ∈ consumer ↔ service_providers
+  & /* @ref1_service_providers:inv3_r1 */ sp_MyHR_access ∈ service_providers ↔ my_health_record_DB
+  & /* @ref1_service_providers:inv4_r1 */ sp_MyHR_access = (consumer_sp⁻¹ ; MyHR)
+  & /* @ref1_service_providers:inv5_r1 */ general_sp_list ∈ service_providers ↔ my_health_record_DB
+  & /* @ref1_service_providers:inv6_r1 */ restricted_sp_list ∈ service_providers ↔ my_health_record_DB
+  & /* @ref1_service_providers:inv7_r1 */ revoked_sp_list ∈ service_providers ↔ my_health_record_DB
+  & /* @ref1_service_providers:inv8_r1 */ partition(sp_MyHR_access,general_sp_list,restricted_sp_list,
+  revoked_sp_list)
+  & /* @ref1_service_providers:inv9a_r1 */ general_sp_access ∈ service_providers ↔ records
+  & /* @ref1_service_providers:inv9b_r1 */ dom(general_sp_access) ⊆ dom(general_sp_list)
+  & /* @ref1_service_providers:inv9c_r1 */ ran(general_sp_access) ⊆ general_records
+  & /* @ref1_service_providers:inv10a_r1 */ restricted_sp_access ∈ service_providers ↔ records
+  & /* @ref1_service_providers:inv10b_r1 */ dom(restricted_sp_access) ⊆ dom(general_sp_list 
+  ∪ restricted_sp_list)
+  & /* @ref1_service_providers:inv10c_r1 */ ran(restricted_sp_access) ⊆ general_records ∪ restricted_records
+  & /* @ref1_service_providers:inv11_r1 */ general_sp_access = (general_sp_list ; (general_records 
+  ◁ records_mhr)⁻¹)
+  & /* @ref1_service_providers:inv12_r1 */ restricted_sp_access = (restricted_sp_list ; ((general_records 
+  ∪ restricted_records) ◁ records_mhr)⁻¹) ∪ (general_sp_list ; (general_records ◁ records_mhr)
+  ⁻¹)
+  & /* @ref1_service_providers:inv15_r1 */ general_sp_access ⊆ restricted_sp_access
+  & /* @abs_mch:inv3 */ MyHR ∈ consumer ⤖ my_health_record_DB
+  & /* @abs_mch:inv4 */ system_operator ⊆ PEOPLE \ consumer
+  & /* @abs_mch:inv6 */ records_mhr ∈ records → my_health_record_DB
+  & /* @abs_mch:inv7 */ general_records ⊆ records
+  & /* @abs_mch:inv8 */ restricted_records ⊆ records
+  & /* @abs_mch:inv9 */ hidden_records ⊆ records
+  & /* @abs_mch:inv10 */ partition(records,general_records,restricted_records,hidden_records)
+  
+  & /* @abs_mch:inv11 */ records_ownership ∈ records → consumer
+  & /* @abs_mch:inv12 */ records_ownership = (records_mhr ; MyHR⁻¹)
+INITIALISATION
+    EVENT INITIALISATION = /* of machine ref3_authorised_reps */
+    THEN 
+         my_health_record_DB := ∅
+      ||
+         consumer := ∅
+      ||
+         MyHR := ∅
+      ||
+         system_operator :: ℙ₁(PEOPLE)
+      ||
+         records := ∅
+      ||
+         records_mhr := ∅
+      ||
+         general_records := ∅
+      ||
+         restricted_records := ∅
+      ||
+         hidden_records := ∅
+      ||
+         records_ownership := ∅
+      ||
+         service_providers := ∅
+      ||
+         consumer_sp := ∅
+      ||
+         sp_MyHR_access := ∅
+      ||
+         general_sp_list := ∅
+      ||
+         restricted_sp_list := ∅
+      ||
+         revoked_sp_list := ∅
+      ||
+         general_sp_access := ∅
+      ||
+         restricted_sp_access := ∅
+      ||
+         general_nominated := ∅
+      ||
+         restricted_nominated := ∅
+      ||
+         full_access_nominated := ∅
+      ||
+         general_nominated_access := ∅
+      ||
+         restricted_nominated_access := ∅
+      ||
+         authorised_rep := ∅
+    REFINES 
+      EVENT INITIALISATION = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT INITIALISATION = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT INITIALISATION = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END
+EVENTS
+  opt_in(c,mhr,so) = 
+    EVENT opt_in = /* of machine ref3_authorised_reps */
+    ANY c,mhr,so
+    WHERE 
+        /* @ref3_authorised_reps:grd2 */ c ∉ consumer
+      & /* @ref3_authorised_reps:grd4 */ mhr ∉ my_health_record_DB
+      & /* @ref3_authorised_reps:grd5 */ so ∈ system_operator
+      & /* @ref3_authorised_reps:grd6 */ c ∉ system_operator
+    THEN 
+         consumer := consumer ∪ {c}
+      ||
+         my_health_record_DB := my_health_record_DB ∪ {mhr}
+      ||
+         MyHR := MyHR ∪ {c ↦ mhr}
+    REFINES 
+      EVENT opt_in = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT opt_in = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT opt_in = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  opt_out(c,so) = 
+    EVENT opt_out = /* of machine ref3_authorised_reps */
+    ANY c,so
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ so ∈ system_operator
+      & /* @ref3_authorised_reps:grd1_r2 */ c ∉ dom(general_nominated)
+      & /* @ref3_authorised_reps:grd2_r2 */ c ∉ dom(restricted_nominated)
+      & /* @ref3_authorised_reps:grd3_r2 */ c ∉ dom(full_access_nominated)
+    THEN 
+         consumer := consumer \ {c}
+      ||
+         my_health_record_DB := my_health_record_DB \ {MyHR(c)}
+      ||
+         MyHR := MyHR \ {c ↦ MyHR(c)}
+      ||
+         records := records \ (records_ownership⁻¹)[{c}]
+      ||
+         records_mhr := (records_ownership⁻¹)[{c}] ⩤ records_mhr
+      ||
+         general_records := general_records \ (records_ownership⁻¹)[{c}]
+      ||
+         restricted_records := restricted_records \ (records_ownership⁻¹)[{c}]
+      ||
+         hidden_records := hidden_records \ (records_ownership⁻¹)[{c}]
+      ||
+         records_ownership := records_ownership ⩥ {c}
+      ||
+         consumer_sp := {c} ⩤ consumer_sp
+      ||
+         sp_MyHR_access := sp_MyHR_access ⩥ {MyHR(c)}
+      ||
+         general_sp_list := general_sp_list ⩥ {MyHR(c)}
+      ||
+         restricted_sp_list := restricted_sp_list ⩥ {MyHR(c)}
+      ||
+         revoked_sp_list := revoked_sp_list ⩥ {MyHR(c)}
+      ||
+         general_sp_access := general_sp_access ⩥ (records_ownership⁻¹)[{c}]
+      ||
+         restricted_sp_access := restricted_sp_access ⩥ (records_ownership⁻¹)[{c}]
+      ||
+         general_nominated := general_nominated ⩥ {MyHR(c)}
+      ||
+         restricted_nominated := restricted_nominated ⩥ {MyHR(c)}
+      ||
+         full_access_nominated := full_access_nominated ⩥ {MyHR(c)}
+      ||
+         general_nominated_access := general_nominated_access ⩥ (records_ownership⁻¹)[{c}]
+      ||
+         restricted_nominated_access := restricted_nominated_access ⩥ (records_ownership⁻¹)[{c}]
+      ||
+         authorised_rep := {c} ⩤ (authorised_rep ⩥ {MyHR(c)})
+    REFINES 
+      EVENT opt_out = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT opt_out = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT opt_out = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  view_record_owner(c,r) = 
+    EVENT view_record_owner = /* of machine ref3_authorised_reps */
+    ANY c,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r7 */ records_mhr(r) ∉ ran(authorised_rep)
+    THEN 
+      skip
+    REFINES 
+      EVENT view_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT view_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT view_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  view_record_authorised_rep(c,r,a) = 
+    EVENT view_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+      skip
+    REFINES 
+      EVENT view_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT view_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT view_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  view_record_nominated(c,r,n) = 
+    EVENT view_record_nominated = /* of machine ref3_authorised_reps */
+    ANY c,r,n
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r2 */ n ↦ r ∈ restricted_nominated_access
+    THEN 
+      skip
+    REFINES 
+      EVENT view_record_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT view_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT view_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  view_record_service_provider(c,r,sp) = 
+    EVENT view_record_service_provider = /* of machine ref3_authorised_reps */
+    ANY c,r,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ sp ↦ r ∈ restricted_sp_access
+    THEN 
+      skip
+    REFINES 
+      EVENT view_record_service_provider = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT view_record_service_provider = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT view_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  delete_record_owner(c,r) = 
+    EVENT delete_record_owner = /* of machine ref3_authorised_reps */
+    ANY c,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r7 */ records_mhr(r) ∉ ran(authorised_rep)
+    THEN 
+         records := records \ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         restricted_records := restricted_records \ {r}
+      ||
+         records_mhr := {r} ⩤ records_mhr
+      ||
+         records_ownership := records_ownership \ {r ↦ c}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := restricted_sp_access ⩥ {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ⩥ {r}
+    REFINES 
+      EVENT delete_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT delete_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT delete_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  delete_record_authorised_rep(c,r,a) = 
+    EVENT delete_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd2 */ r ∉ hidden_records
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         records := records \ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         restricted_records := restricted_records \ {r}
+      ||
+         records_mhr := {r} ⩤ records_mhr
+      ||
+         records_ownership := records_ownership \ {r ↦ c}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := restricted_sp_access ⩥ {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ⩥ {r}
+    REFINES 
+      EVENT delete_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT delete_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT delete_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_general_record_owner(ow,r) = 
+    EVENT upload_general_record_owner = /* of machine ref3_authorised_reps */
+    ANY ow,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(ow) ∉ ran(authorised_rep)
+    THEN 
+         records := records ∪ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {MyHR(ow)}) × {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {MyHR(ow)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  ow)}) × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(general_nominated 
+  ▷ {MyHR(ow)}) × {r} ∪ dom(restricted_nominated ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_general_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_general_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_general_record_authorised_rep(ow,r,a) = 
+    EVENT upload_general_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY ow,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(ow) ∈ authorised_rep
+    THEN 
+         records := records ∪ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {MyHR(ow)}) × {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {MyHR(ow)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  ow)}) × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(general_nominated 
+  ▷ {MyHR(ow)}) × {r} ∪ dom(restricted_nominated ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_general_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_general_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_restricted_record_owner(ow,r) = 
+    EVENT upload_restricted_record_owner = /* of machine ref3_authorised_reps */
+    ANY ow,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(ow) ∉ ran(authorised_rep)
+    THEN 
+         records := records ∪ {r}
+      ||
+         restricted_records := restricted_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(restricted_sp_list ▷ {MyHR(ow)})
+   × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(restricted_nominated 
+  ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_restricted_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_restricted_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_restricted_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_restricted_record_authorised_rep(ow,r,a) = 
+    EVENT upload_restricted_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY ow,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(ow) ∈ authorised_rep
+    THEN 
+         records := records ∪ {r}
+      ||
+         restricted_records := restricted_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(restricted_sp_list ▷ {MyHR(ow)})
+   × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(restricted_nominated 
+  ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_restricted_record_owner = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_restricted_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_restricted_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_general_record_nominated(ow,r,n) = 
+    EVENT upload_general_record_nominated = /* of machine ref3_authorised_reps */
+    ANY ow,r,n
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r2 */ n ↦ MyHR(ow) ∈ full_access_nominated
+    THEN 
+         records := records ∪ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {MyHR(ow)}) × {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {MyHR(ow)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  ow)}) × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(general_nominated 
+  ▷ {MyHR(ow)}) × {r} ∪ dom(restricted_nominated ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_general_record_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_general_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_restricted_record_nominated(ow,r,n) = 
+    EVENT upload_restricted_record_nominated = /* of machine ref3_authorised_reps */
+    ANY ow,r,n
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r2 */ n ↦ MyHR(ow) ∈ full_access_nominated
+    THEN 
+         records := records ∪ {r}
+      ||
+         restricted_records := restricted_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(restricted_sp_list ▷ {MyHR(ow)})
+   × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(restricted_nominated 
+  ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_restricted_record_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_restricted_record_owner = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_restricted_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_general_record_SP(ow,r,sp) = 
+    EVENT upload_general_record_SP = /* of machine ref3_authorised_reps */
+    ANY ow,r,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r1 */ (
+         sp ↦ MyHR(ow) ∈ restricted_sp_list
+         ∨
+         sp ↦ MyHR(ow) ∈ general_sp_list
+        )
+    THEN 
+         records := records ∪ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {MyHR(ow)}) × {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {MyHR(ow)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  ow)}) × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(general_nominated 
+  ▷ {MyHR(ow)}) × {r} ∪ dom(restricted_nominated ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_general_record_SP = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_general_record_SP = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  upload_restricted_record_SP(ow,r,sp) = 
+    EVENT upload_restricted_record_SP = /* of machine ref3_authorised_reps */
+    ANY ow,r,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ ow ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ RESOURCES \ records
+      & /* @ref3_authorised_reps:grd1_r1 */ sp ↦ MyHR(ow) ∈ restricted_sp_list
+    THEN 
+         records := records ∪ {r}
+      ||
+         restricted_records := restricted_records ∪ {r}
+      ||
+         records_mhr := records_mhr ∪ {r ↦ MyHR(ow)}
+      ||
+         records_ownership := records_ownership ∪ {r ↦ ow}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(restricted_sp_list ▷ {MyHR(ow)})
+   × {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ dom(restricted_nominated 
+  ▷ {MyHR(ow)}) × {r}
+    REFINES 
+      EVENT upload_restricted_record_SP = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT upload_restricted_record_SP = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT upload_restricted_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  restrict_record(c,r) = 
+    EVENT restrict_record = /* of machine ref3_authorised_reps */
+    ANY c,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ general_records
+      & /* @ref3_authorised_reps:grd3 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_records := restricted_records ∪ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := (restricted_sp_access ⩥ {r}) ∪ dom(restricted_sp_list ▷ {records_mhr(
+  r)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom(restricted_nominated 
+  ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT restrict_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT restrict_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT restrict_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  restrict_record_authorised_rep(c,r,a) = 
+    EVENT restrict_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd2 */ r ∈ general_records
+      & /* @ref3_authorised_reps:grd3 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         restricted_records := restricted_records ∪ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := (restricted_sp_access ⩥ {r}) ∪ dom(restricted_sp_list ▷ {records_mhr(
+  r)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom(restricted_nominated 
+  ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT restrict_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT restrict_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT restrict_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  general_record(c,r) = 
+    EVENT general_record = /* of machine ref3_authorised_reps */
+    ANY c,r
+    WHERE 
+        /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4 */ r ∈ restricted_records
+      & /* @ref3_authorised_reps:grd3 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_records := restricted_records \ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)}) × 
+  {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)
+  }) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  c)}) × {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom((general_nominated 
+  ∪ restricted_nominated) ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT general_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT general_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  general_record_authorised_rep(c,r,a) = 
+    EVENT general_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4 */ r ∈ restricted_records
+      & /* @ref3_authorised_reps:grd3 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         restricted_records := restricted_records \ {r}
+      ||
+         general_records := general_records ∪ {r}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)}) × 
+  {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)
+  }) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  c)}) × {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom((general_nominated 
+  ∪ restricted_nominated) ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT general_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT general_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT general_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  hide_record(c,r) = 
+    EVENT hide_record = /* of machine ref3_authorised_reps */
+    ANY c,r
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ∈ records
+      & /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4 */ (
+         r ∈ restricted_records
+         ∨
+         r ∈ general_records
+        )
+      & /* @ref3_authorised_reps:grd5 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_records := restricted_records \ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         hidden_records := hidden_records ∪ {r}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := restricted_sp_access ⩥ {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ⩥ {r}
+    REFINES 
+      EVENT hide_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT hide_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT hide_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  hide_record_authorised_rep(c,r,a) = 
+    EVENT hide_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ∈ records
+      & /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4 */ (
+         r ∈ restricted_records
+         ∨
+         r ∈ general_records
+        )
+      & /* @ref3_authorised_reps:grd5 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         restricted_records := restricted_records \ {r}
+      ||
+         general_records := general_records \ {r}
+      ||
+         hidden_records := hidden_records ∪ {r}
+      ||
+         general_sp_access := general_sp_access ⩥ {r}
+      ||
+         restricted_sp_access := restricted_sp_access ⩥ {r}
+      ||
+         general_nominated_access := general_nominated_access ⩥ {r}
+      ||
+         restricted_nominated_access := restricted_nominated_access ⩥ {r}
+    REFINES 
+      EVENT hide_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT hide_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT hide_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  unhide_record(c,r,so) = 
+    EVENT unhide_record = /* of machine ref3_authorised_reps */
+    ANY c,r,so
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ∈ records
+      & /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd3 */ r ∈ hidden_records
+      & /* @ref3_authorised_reps:grd4 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd5 */ so ∈ system_operator
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         general_records := general_records ∪ {r}
+      ||
+         hidden_records := hidden_records \ {r}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)}) × 
+  {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {records_mhr(r)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  c)}) × {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom((general_nominated 
+  ∪ restricted_nominated) ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT unhide_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT unhide_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT unhide_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  unhide_record_authorised_rep(c,r,so,a) = 
+    EVENT unhide_record_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,r,so,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1 */ r ∈ records
+      & /* @ref3_authorised_reps:grd2 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd3 */ r ∈ hidden_records
+      & /* @ref3_authorised_reps:grd4 */ r ↦ c ∈ records_ownership
+      & /* @ref3_authorised_reps:grd5 */ so ∈ system_operator
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         general_records := general_records ∪ {r}
+      ||
+         hidden_records := hidden_records \ {r}
+      ||
+         general_sp_access := general_sp_access ∪ dom(general_sp_list ▷ {records_mhr(r)}) × 
+  {r}
+      ||
+         restricted_sp_access := restricted_sp_access ∪ dom((general_sp_list ∪ restricted_sp_list)
+   ▷ {records_mhr(r)}) × {r}
+      ||
+         general_nominated_access := general_nominated_access ∪ dom(general_nominated ▷ {MyHR(
+  c)}) × {r}
+      ||
+         restricted_nominated_access := (restricted_nominated_access ⩥ {r}) ∪ dom((general_nominated 
+  ∪ restricted_nominated) ▷ {MyHR(c)}) × {r}
+    REFINES 
+      EVENT unhide_record = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT unhide_record = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        REFINES 
+          EVENT unhide_record = /* of machine abs_mch */
+          THEN 
+            skip
+          END
+        END
+      END
+    END;
+  
+  add_consumer_sp(c,sp) = 
+    EVENT add_consumer_sp = /* of machine ref3_authorised_reps */
+    ANY c,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd3_r1 */ (c ↦ sp) ∉ consumer_sp
+      & /* @ref3_authorised_reps:grd4_r1 */ (sp ↦ MyHR(c)) ∉ sp_MyHR_access
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         consumer_sp := consumer_sp ∪ {c ↦ sp}
+      ||
+         sp_MyHR_access := sp_MyHR_access ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {MyHR(c)}))
+      ||
+         restricted_sp_access := restricted_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {MyHR(c)}))
+    REFINES 
+      EVENT add_consumer_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT add_consumer_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  add_consumer_sp_authorised_rep(c,sp,a) = 
+    EVENT add_consumer_sp_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,sp,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd3_r1 */ (c ↦ sp) ∉ consumer_sp
+      & /* @ref3_authorised_reps:grd4_r1 */ (sp ↦ MyHR(c)) ∉ sp_MyHR_access
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ MyHR(c) ∈ authorised_rep
+    THEN 
+         consumer_sp := consumer_sp ∪ {c ↦ sp}
+      ||
+         sp_MyHR_access := sp_MyHR_access ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {MyHR(c)}))
+      ||
+         restricted_sp_access := restricted_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {MyHR(c)}))
+    REFINES 
+      EVENT add_consumer_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT add_consumer_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  add_sp(so,sp) = 
+    EVENT add_sp = /* of machine ref3_authorised_reps */
+    ANY so,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ SERVICE_PROVIDERS \ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ so ∈ system_operator
+    THEN 
+         service_providers := service_providers ∪ {sp}
+    REFINES 
+      EVENT add_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT add_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  revoke_access_sp(c,mhr,sp) = 
+    EVENT revoke_access_sp = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (sp ↦ MyHR(c)) ∉ revoked_sp_list
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         revoked_sp_list := revoked_sp_list ∪ {sp ↦ mhr}
+      ||
+         restricted_sp_list := restricted_sp_list \ {sp ↦ mhr}
+      ||
+         general_sp_list := general_sp_list \ {sp ↦ mhr}
+      ||
+         general_sp_access := general_sp_access \ (({sp} ◁ general_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+      ||
+         restricted_sp_access := restricted_sp_access \ (({sp} ◁ restricted_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+    REFINES 
+      EVENT revoke_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT revoke_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  revoke_access_sp_authorised_rep(c,mhr,sp,a) = 
+    EVENT revoke_access_sp_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (sp ↦ MyHR(c)) ∉ revoked_sp_list
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         revoked_sp_list := revoked_sp_list ∪ {sp ↦ mhr}
+      ||
+         restricted_sp_list := restricted_sp_list \ {sp ↦ mhr}
+      ||
+         general_sp_list := general_sp_list \ {sp ↦ mhr}
+      ||
+         general_sp_access := general_sp_access \ (({sp} ◁ general_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+      ||
+         restricted_sp_access := restricted_sp_access \ (({sp} ◁ restricted_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+    REFINES 
+      EVENT revoke_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT revoke_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  give_restricted_access_sp(c,mhr,sp) = 
+    EVENT give_restricted_access_sp = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (
+         sp ↦ MyHR(c) ∈ revoked_sp_list
+         ∨
+         sp ↦ MyHR(c) ∈ general_sp_list
+        )
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         revoked_sp_list := revoked_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         restricted_sp_list := restricted_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access \ (({sp} ◁ general_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+      ||
+         restricted_sp_access := restricted_sp_access ∪ {sp} × dom((general_records ∪ restricted_records)
+   ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT give_restricted_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT give_restricted_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  give_restricted_access_sp_authorised_rep(c,mhr,sp,a) = 
+    EVENT give_restricted_access_sp_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (
+         sp ↦ MyHR(c) ∈ revoked_sp_list
+         ∨
+         sp ↦ MyHR(c) ∈ general_sp_list
+        )
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         revoked_sp_list := revoked_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         restricted_sp_list := restricted_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access \ (({sp} ◁ general_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}])
+      ||
+         restricted_sp_access := restricted_sp_access ∪ {sp} × dom((general_records ∪ restricted_records)
+   ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT give_restricted_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT give_restricted_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  give_general_access_sp(c,mhr,sp) = 
+    EVENT give_general_access_sp = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (
+         sp ↦ MyHR(c) ∈ revoked_sp_list
+         ∨
+         sp ↦ MyHR(c) ∈ restricted_sp_list
+        )
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         revoked_sp_list := revoked_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         restricted_sp_list := restricted_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {mhr}))
+      ||
+         restricted_sp_access := restricted_sp_access \ (({sp} ◁ restricted_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}]) ∪ {sp} × dom(general_records ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT give_general_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT give_general_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  give_general_access_sp_authorised_rep(c,mhr,sp,a) = 
+    EVENT give_general_access_sp_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,mhr,sp,a
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r1 */ sp ∈ service_providers
+      & /* @ref3_authorised_reps:grd2_r1 */ mhr ∈ my_health_record_DB
+      & /* @ref3_authorised_reps:grd3_r1 */ c ∈ consumer
+      & /* @ref3_authorised_reps:grd4_r1 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd5_r1 */ c ↦ sp ∈ consumer_sp
+      & /* @ref3_authorised_reps:grd6_r1 */ (
+         sp ↦ MyHR(c) ∈ revoked_sp_list
+         ∨
+         sp ↦ MyHR(c) ∈ restricted_sp_list
+        )
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         revoked_sp_list := revoked_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         restricted_sp_list := restricted_sp_list \ {sp ↦ MyHR(c)}
+      ||
+         general_sp_list := general_sp_list ∪ {sp ↦ MyHR(c)}
+      ||
+         general_sp_access := general_sp_access ∪ {sp} × dom(general_records ◁ (records_mhr 
+  ▷ {mhr}))
+      ||
+         restricted_sp_access := restricted_sp_access \ (({sp} ◁ restricted_sp_access) ▷ (records_mhr⁻¹)
+  [{mhr}]) ∪ {sp} × dom(general_records ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT give_general_access_sp = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      REFINES 
+        EVENT give_general_access_sp = /* of machine ref1_service_providers */
+        THEN 
+          skip
+        END
+      END
+    END;
+  
+  add_nominated(c,mhr,n) = 
+    EVENT add_nominated = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ (n ↦ mhr) ∉ restricted_nominated
+      & /* @ref3_authorised_reps:grd5_r2 */ (n ↦ mhr) ∉ general_nominated
+      & /* @ref3_authorised_reps:grd6_r2 */ (n ↦ mhr) ∉ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         general_nominated := general_nominated ∪ {n ↦ mhr}
+      ||
+         general_nominated_access := general_nominated_access ∪ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom(general_records 
+  ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT add_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  add_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT add_nominated_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ (n ↦ mhr) ∉ restricted_nominated
+      & /* @ref3_authorised_reps:grd5_r2 */ (n ↦ mhr) ∉ general_nominated
+      & /* @ref3_authorised_reps:grd6_r2 */ (n ↦ mhr) ∉ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         general_nominated := general_nominated ∪ {n ↦ mhr}
+      ||
+         general_nominated_access := general_nominated_access ∪ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom(general_records 
+  ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT add_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  delete_general_nominated(c,mhr,n) = 
+    EVENT delete_general_nominated = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ general_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         general_nominated := general_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access \ {n} × dom(general_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access \ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT delete_general_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  delete_general_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT delete_general_nominated_authorised_rep = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ general_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         general_nominated := general_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access \ {n} × dom(general_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access \ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT delete_general_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_restrict_access_to_general_nominated(c,mhr,n) = 
+    EVENT grant_restrict_access_to_general_nominated = /* of machine ref3_authorised_reps */
+  
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ general_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         general_nominated := general_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom(restricted_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access \ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_restrict_access_to_general_nominated = /* of machine ref2_nominated_reps *
+  /
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_restrict_access_to_general_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT grant_restrict_access_to_general_nominated_authorised_rep = /* of machine ref3_authorised_reps 
+  */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ general_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         general_nominated := general_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom(restricted_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access \ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_restrict_access_to_general_nominated = /* of machine ref2_nominated_reps *
+  /
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_restrict_access_to_full_access_nominated(c,mhr,n) = 
+    EVENT grant_restrict_access_to_full_access_nominated = /* of machine ref3_authorised_reps 
+  */
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated \ {n ↦ mhr}
+    REFINES 
+      EVENT grant_restrict_access_to_full_access_nominated = /* of machine ref2_nominated_reps 
+  */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_restrict_access_to_full_access_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT grant_restrict_access_to_full_access_nominated_authorised_rep = /* of machine ref3_authorised_reps 
+  */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated \ {n ↦ mhr}
+    REFINES 
+      EVENT grant_restrict_access_to_full_access_nominated = /* of machine ref2_nominated_reps 
+  */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_general_access_to_nominated(c,mhr,n) = 
+    EVENT grant_general_access_to_nominated = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ restricted_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         general_nominated := general_nominated ∪ {n ↦ mhr}
+      ||
+         restricted_nominated := restricted_nominated \ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access \ {n} × dom(restricted_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access ∪ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_general_access_to_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_general_access_to_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT grant_general_access_to_nominated_authorised_rep = /* of machine ref3_authorised_reps 
+  */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ n ↦ mhr ∈ restricted_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         general_nominated := general_nominated ∪ {n ↦ mhr}
+      ||
+         restricted_nominated := restricted_nominated \ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated \ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access \ {n} × dom(restricted_records 
+  ◁ (records_mhr ▷ {mhr}))
+      ||
+         general_nominated_access := general_nominated_access ∪ {n} × dom(general_records ◁ 
+  (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_general_access_to_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_full_access_to_nominated(c,mhr,n) = 
+    EVENT grant_full_access_to_nominated = /* of machine ref3_authorised_reps */
+    ANY c,mhr,n
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ (n ↦ mhr) ∉ general_nominated
+      & /* @ref3_authorised_reps:grd5_r2 */ (n ↦ mhr) ∉ restricted_nominated
+      & /* @ref3_authorised_reps:grd6_r2 */ (n ↦ mhr) ∉ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ MyHR(c) ∉ ran(authorised_rep)
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated ∪ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom((general_records 
+  ∪ restricted_records) ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_full_access_to_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  grant_full_access_to_nominated_authorised_rep(c,mhr,n,a) = 
+    EVENT grant_full_access_to_nominated_authorised_rep = /* of machine ref3_authorised_reps 
+  */
+    ANY c,mhr,n,a
+    WHERE 
+        c ∈ consumer
+      & n ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r2 */ c ≠ n
+      & /* @ref3_authorised_reps:grd3_r2 */ c ↦ mhr ∈ MyHR
+      & /* @ref3_authorised_reps:grd4_r2 */ (n ↦ mhr) ∉ general_nominated
+      & /* @ref3_authorised_reps:grd5_r2 */ (n ↦ mhr) ∉ restricted_nominated
+      & /* @ref3_authorised_reps:grd6_r2 */ (n ↦ mhr) ∉ full_access_nominated
+      & /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ a ↦ mhr ∈ authorised_rep
+    THEN 
+         restricted_nominated := restricted_nominated ∪ {n ↦ mhr}
+      ||
+         full_access_nominated := full_access_nominated ∪ {n ↦ mhr}
+      ||
+         restricted_nominated_access := restricted_nominated_access ∪ {n} × dom((general_records 
+  ∪ restricted_records) ◁ (records_mhr ▷ {mhr}))
+    REFINES 
+      EVENT grant_full_access_to_nominated = /* of machine ref2_nominated_reps */
+      THEN 
+        skip
+      END
+    END;
+  
+  add_authorised(a,mhr,so) = 
+    EVENT add_authorised = /* of machine ref3_authorised_reps */
+    ANY a,mhr,so
+    WHERE 
+        /* @ref3_authorised_reps:grd1_r7 */ a ∈ consumer
+      & /* @ref3_authorised_reps:grd2_r7 */ mhr ∈ ran(MyHR)
+      & /* @ref3_authorised_reps:grd3_r7 */ MyHR(a) ≠ mhr
+      & /* @ref3_authorised_reps:grd4_r7 */ (a ↦ mhr) ∉ authorised_rep
+      & /* @ref3_authorised_reps:grd5_r7 */ so ∈ system_operator
+    THEN 
+         authorised_rep := authorised_rep ∪ {a ↦ mhr}
+    END;
+  
+  delete_authorised(a,mhr,so) = 
+    EVENT delete_authorised = /* of machine ref3_authorised_reps */
+    ANY a,mhr,so
+    WHERE 
+        /* @ref3_authorised_reps:grd4_r7 */ a ↦ mhr ∈ authorised_rep
+      & /* @ref3_authorised_reps:grd5_r7 */ so ∈ system_operator
+    THEN 
+         authorised_rep := authorised_rep \ {a ↦ mhr}
+    END
+END
+
