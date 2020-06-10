@@ -1,1 +1,1 @@
-x
+[Event-B model](MyHealthRecord-reduced.zip) is a compact (reduced) version of the model. All POs were discharged. You can use this [prob_trans.eventb](prob_trans.eventb) in ProB to animate the model and model check it.x
